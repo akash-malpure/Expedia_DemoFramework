@@ -2,31 +2,24 @@
 <testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-05-23T06:52:02Z" name="Expedia Automation Testing" finished-at="2021-05-23T06:52:09Z" duration-ms="7132">
+  <suite started-at="2021-05-23T14:49:40Z" name="Default suite" finished-at="2021-05-23T14:49:53Z" duration-ms="12436">
     <groups>
     </groups>
-    <test started-at="2021-05-23T06:52:02Z" name="Expedia Tests" finished-at="2021-05-23T06:52:09Z" duration-ms="7132">
-      <class name="org.com.expediaTests.TC_001_ExpediaHomePageVerification">
-        <test-method is-config="true" signature="initialize(java.lang.String)[pri:0, instance:org.com.expediaTests.TC_001_ExpediaHomePageVerification@5c86dbc5]" started-at="2021-05-23T12:22:02Z" name="initialize" finished-at="2021-05-23T12:22:08Z" duration-ms="6242" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2021-05-23T14:49:40Z" name="Default test" finished-at="2021-05-23T14:49:53Z" duration-ms="12436">
+      <class name="org.com.expediaTests.TC_002_SearchForFlights">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:org.com.expediaTests.TC_002_SearchForFlights@3835c46]" started-at="2021-05-23T20:19:40Z" name="initialize" finished-at="2021-05-23T20:19:46Z" duration-ms="5740" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method signature="startTest()[pri:0, instance:org.com.expediaTests.TC_001_ExpediaHomePageVerification@5c86dbc5]" started-at="2021-05-23T12:22:08Z" name="startTest" finished-at="2021-05-23T12:22:09Z" duration-ms="31" status="PASS">
+        <test-method signature="searchFlights()[pri:0, instance:org.com.expediaTests.TC_002_SearchForFlights@3835c46]" started-at="2021-05-23T20:19:46Z" name="searchFlights" finished-at="2021-05-23T20:19:52Z" duration-ms="5992" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- startTest -->
-        <test-method is-config="true" signature="cleanUp()[pri:0, instance:org.com.expediaTests.TC_001_ExpediaHomePageVerification@5c86dbc5]" started-at="2021-05-23T12:22:09Z" name="cleanUp" finished-at="2021-05-23T12:22:09Z" duration-ms="663" status="PASS">
+        </test-method> <!-- searchFlights -->
+        <test-method is-config="true" signature="cleanUp()[pri:0, instance:org.com.expediaTests.TC_002_SearchForFlights@3835c46]" started-at="2021-05-23T20:19:52Z" name="cleanUp" finished-at="2021-05-23T20:19:53Z" duration-ms="694" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- org.com.expediaTests.TC_001_ExpediaHomePageVerification -->
-    </test> <!-- Expedia Tests -->
-  </suite> <!-- Expedia Automation Testing -->
+      </class> <!-- org.com.expediaTests.TC_002_SearchForFlights -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

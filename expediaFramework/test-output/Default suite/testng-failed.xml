@@ -3,16 +3,7 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test" verbose="2">
     <classes>
-      <class name="org.com.expediaTests.TC_001_ExpediaHomePageVerification"/>
+      <class name="org.com.expediaTests.TC_002_SearchForFlights"/>
     </classes>
   </test> <!-- Default test -->
-  <test name="Default test(failed)">
-    <classes>
-      <class name="org.com.expediaTests.TC_001_ExpediaHomePageVerification">
-        <methods>
-          <include name="startTest"/>
-        </methods>
-      </class> <!-- org.com.expediaTests.TC_001_ExpediaHomePageVerification -->
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
