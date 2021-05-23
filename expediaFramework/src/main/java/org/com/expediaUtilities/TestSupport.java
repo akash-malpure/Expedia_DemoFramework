@@ -18,6 +18,7 @@ public class TestSupport {
 	public static WebDriver driver;
 	public static Logger logger;
 	
+	@SuppressWarnings("deprecation")
 	@Parameters("browser")
 	@BeforeClass
 	public void initialize(String browserLevel) {
@@ -41,7 +42,8 @@ public class TestSupport {
 			
 			System.setProperty("webdriver.ie.driver", ".//Drivers//IEDriverServer.exe");
 			
-			DesiredCapabilities desiredcap = new DesiredCapabilities().internetExplorer();
+			new DesiredCapabilities();
+			DesiredCapabilities desiredcap = DesiredCapabilities.internetExplorer();
 			desiredcap.setCapability("ignoreZoomSetting", true);
 			driver = new InternetExplorerDriver(desiredcap);
 			
