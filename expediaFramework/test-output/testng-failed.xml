@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="none" name="Failed suite [Expedia Automation Testing]" guice-stage="DEVELOPMENT">
+  <parameter name="browser" value="chrome"/>
+  <listeners>
+    <listener class-name="org.com.expediaUtilities.GenerateTestReport"/>
+  </listeners>
+  <test name="Expedia Tests">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="org.com.expediaTests.TC_001_ExpediaHomePageVerification"/>
+    </classes>
+  </test> <!-- Expedia Tests -->
+</suite> <!-- Failed suite [Expedia Automation Testing] -->
