@@ -1,5 +1,6 @@
 package org.com.expediaTests;
 
+
 import java.util.concurrent.TimeUnit;
 
 import org.com.expediaPageFactory.FlightsPageFactory;
@@ -34,12 +35,20 @@ public class TC_002_SearchForFlights {
 
 		if(isFlightTypeAvailable) {
 			System.out.println("This flight type is available");
+			//asserthere
 		}
 		else {
 			System.out.println("This flight type is not available");
+			//Screenshot & assert false here
 		}
 		
 		flightspage.setDepartureCity("Melbourne");
+		flightspage.setArrivalCity("Delhi");
+		flightspage.setDepartureDate("26");
+		
+		flightspage.setTravellerDetails().setNumberOfAdultTravellers(1);
+		java.lang.Thread.sleep(2000);	
+		flightspage.searchForAvailableFlights();
 		java.lang.Thread.sleep(4000);	
 	}
 	
