@@ -21,7 +21,7 @@ public class TC_002_SearchForFlights {
 		driver = new ChromeDriver();
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 		driver.get("https://www.expedia.co.in/");
 	}
 	
@@ -44,12 +44,12 @@ public class TC_002_SearchForFlights {
 		
 		flightspage.setDepartureCity("Melbourne");
 		flightspage.setArrivalCity("Delhi");
-		flightspage.setDepartureDate("26");
-		
-		flightspage.setTravellerDetails().setNumberOfAdultTravellers(1);
-		java.lang.Thread.sleep(2000);	
+		flightspage.setDepartureDate(10,12,2021);
+		flightspage.setTravellerDetails().setNumberOfAdultTravellers(4);
+		java.lang.Thread.sleep(500);	
 		flightspage.searchForAvailableFlights();
 		java.lang.Thread.sleep(4000);	
+		
 	}
 	
 	@AfterClass

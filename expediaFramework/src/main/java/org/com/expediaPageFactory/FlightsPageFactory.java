@@ -1,8 +1,11 @@
 package org.com.expediaPageFactory;
 
 
+import java.text.DateFormatSymbols;
+import java.util.Date;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -64,6 +67,11 @@ public class FlightsPageFactory {
 	@FindBy(xpath="//div[contains(@class,'guestsDoneBtn')]//button[@data-testid='guests-done-button']")
 	WebElement addTravellersDoneButton;
 	
+	@FindBy(xpath="//div[@class=\"uitk-flex uitk-flex-justify-content-space-between uitk-date-picker-menu-pagination-container\"]//button[2]")
+	WebElement nextMonth;
+	
+	@FindBy(xpath="//div[@class=\"uitk-date-picker-menu-months-container\"]//div[1]//h2")
+	WebElement currentMonthDisplayed;
 	
 	
 	public FlightsPageFactory(WebDriver driver) {
@@ -133,21 +141,66 @@ public class FlightsPageFactory {
 		}
 	}
 	
-	public void setDepartureDate(String dd) {
-			
+	@SuppressWarnings("deprecation")
+	public void setDepartureDate(int dd, int mm, int yyyy) {
+
+	
+		
+		Date date = new Date();
+		int currentMonth = date.getMonth() + 1;
+		int currentYear = date.getYear() + 1900;
+		String dateProvided = String.valueOf(dd);
+		int monthProvided = mm;
+		int yearProvided = yyyy;
+		
 		departureDateButton.click();
 		wait.until(ExpectedConditions.visibilityOfAllElements(availableDates));
 		
-		for(WebElement currentDate : availableDates) {
+		System.out.println(dateProvided + " " +currentMonth+ " " +currentYear);
+
+		if((currentYear==yyyy && currentMonth<=mm) || ((currentYear+1)==yyyy && (currentMonth-2)>=mm)  ) {
 			
-			System.out.println(currentDate.getAttribute("data-day"));
-			
-			if(currentDate.getAttribute("data-day").equals(dd)) {
-				currentDate.click();
-				break;
-			}	
+//			System.out.println("setDepartureDate passed if statement");
+			setMonthAndYear(monthProvided,yearProvided);
+//			System.out.println("Month and year successfully set");
+			wait.until(ExpectedConditions.visibilityOfAllElements(availableDates));
+		
+			for(WebElement currentDate : availableDates) {
+
+//				System.out.println(currentDate.getAttribute("data-day"));
+
+				if(currentDate.getAttribute("data-day").equals(dateProvided)) {
+					currentDate.click();
+					break;
+				}	
+			}
+			datePickerDone.click();
 		}
-		datePickerDone.click();
+		else {
+			System.out.println("Please set correct month & year of departure. Month of departure cannot be more than 11 months of current date.");
+		}
+	}
+	
+	private void setMonthAndYear(int mm , int yyyy) {
+		
+		DateFormatSymbols dateFormatSymbol = new DateFormatSymbols();
+		String[] allMonths =  dateFormatSymbol.getMonths();
+		
+		while(true) {
+			
+			try {
+				
+//				System.out.println("//h2[text()='"+allMonths[mm-1] + " " + yyyy +"']");
+				driver.findElement(By.xpath("//div[@class='uitk-date-picker-month'][position()=1]//h2[text()='"+ allMonths[mm-1] + " " + yyyy +"']"));
+//				System.out.println("Month set to "+ allMonths[mm-1] + " and year set to " + yyyy );
+				break;
+			}
+			catch(Exception e) {
+				
+				System.out.println("Current month is : " + currentMonthDisplayed.getText());
+				nextMonth.click();
+			}	
+		}		
 	}
 
 	public FlightDetailsPage searchForAvailableFlights() {
@@ -166,7 +219,7 @@ public class FlightsPageFactory {
 	}
 	
 	public void setNumberOfAdultTravellers(int number) throws InterruptedException {
-		
+				
 		for(int i=2; i<=number; i++){
 			
 				addAdultTravellers.click();

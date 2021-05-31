@@ -2,20 +2,20 @@
 <testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-05-24T07:44:38Z" name="Default suite" finished-at="2021-05-24T07:44:58Z" duration-ms="20193">
+  <suite started-at="2021-05-31T05:00:23Z" name="Default suite" finished-at="2021-05-31T05:01:00Z" duration-ms="36440">
     <groups>
     </groups>
-    <test started-at="2021-05-24T07:44:38Z" name="Default test" finished-at="2021-05-24T07:44:58Z" duration-ms="20193">
+    <test started-at="2021-05-31T05:00:23Z" name="Default test" finished-at="2021-05-31T05:01:00Z" duration-ms="36440">
       <class name="org.com.expediaTests.TC_002_SearchForFlights">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:org.com.expediaTests.TC_002_SearchForFlights@3835c46]" started-at="2021-05-24T13:14:38Z" name="initialize" finished-at="2021-05-24T13:14:44Z" duration-ms="5538" status="PASS">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:org.com.expediaTests.TC_002_SearchForFlights@3835c46]" started-at="2021-05-31T10:30:23Z" name="initialize" finished-at="2021-05-31T10:30:29Z" duration-ms="5982" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method signature="searchFlights()[pri:0, instance:org.com.expediaTests.TC_002_SearchForFlights@3835c46]" started-at="2021-05-24T13:14:44Z" name="searchFlights" finished-at="2021-05-24T13:14:58Z" duration-ms="13956" status="PASS">
+        <test-method signature="searchFlights()[pri:0, instance:org.com.expediaTests.TC_002_SearchForFlights@3835c46]" started-at="2021-05-31T10:30:29Z" name="searchFlights" finished-at="2021-05-31T10:30:59Z" duration-ms="29686" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchFlights -->
-        <test-method is-config="true" signature="cleanUp()[pri:0, instance:org.com.expediaTests.TC_002_SearchForFlights@3835c46]" started-at="2021-05-24T13:14:58Z" name="cleanUp" finished-at="2021-05-24T13:14:58Z" duration-ms="686" status="PASS">
+        <test-method is-config="true" signature="cleanUp()[pri:0, instance:org.com.expediaTests.TC_002_SearchForFlights@3835c46]" started-at="2021-05-31T10:30:59Z" name="cleanUp" finished-at="2021-05-31T10:31:00Z" duration-ms="760" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
